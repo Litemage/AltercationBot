@@ -8,9 +8,9 @@
 #include <ctre/Phoenix.h>
 
 
-class ArcadeDriveSubsystem : public frc2::SubsystemBase {
+class DriveSubsystem : public frc2::SubsystemBase {
  public:
-  ArcadeDriveSubsystem();
+  DriveSubsystem();
 
   /**
    * Will be called periodically whenever the CommandScheduler runs.
@@ -23,10 +23,16 @@ class ArcadeDriveSubsystem : public frc2::SubsystemBase {
    */
   void SimulationPeriodic() override;
 
-// Drive robot
+// Drive robot arcade-style
 //vy = velocity forward
 //vx = velocity right
 void ArcadeDrive(double vy, double vx);
+
+// Drive robot Tank-Style
+// pl - Left percent power for left motor
+// pr - Right percent power for left motor
+// scale - controls max percent output, by default is 1 (0 < scale <= 1)
+void TankDrive(double pl, double pr, unsigned double scalar = 1);
 
  private:
   // Components (e.g. motor controllers and sensors) should generally be
