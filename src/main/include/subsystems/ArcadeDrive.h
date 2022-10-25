@@ -5,10 +5,12 @@
 #pragma once
 
 #include <frc2/command/SubsystemBase.h>
+#include <ctre/Phoenix.h>
 
-class ExampleSubsystem : public frc2::SubsystemBase {
+
+class ArcadeDriveSubsystem : public frc2::SubsystemBase {
  public:
-  ExampleSubsystem();
+  ArcadeDriveSubsystem();
 
   /**
    * Will be called periodically whenever the CommandScheduler runs.
@@ -21,7 +23,14 @@ class ExampleSubsystem : public frc2::SubsystemBase {
    */
   void SimulationPeriodic() override;
 
+// Drive robot
+//vy = velocity forward
+//vx = velocity right
+void ArcadeDrive(double vy, double vx);
+
  private:
   // Components (e.g. motor controllers and sensors) should generally be
   // declared private and exposed only through public methods.
+  TalonSRX m_left;
+  TalonSRX m_right;
 };
