@@ -32,7 +32,7 @@ void ArcadeDrive(double vy, double vx);
 // pl - Left percent power for left motor
 // pr - Right percent power for left motor
 // scale - controls max percent output, by default is 1 (0 < scale <= 1)
-void TankDrive(double pl, double pr, unsigned double scalar = 1);
+void TankDrive(double pl, double pr, double scalar = 1);
 
  private:
   // Components (e.g. motor controllers and sensors) should generally be

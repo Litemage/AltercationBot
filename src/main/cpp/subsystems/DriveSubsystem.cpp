@@ -3,6 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "subsystems/DriveSubsystem.h"
+#include <iostream>
 
 DriveSubsystem::DriveSubsystem() : m_left{1}, m_right{2} {
   // Implementation of subsystem constructor goes here.
@@ -21,7 +22,7 @@ void DriveSubsystem::ArcadeDrive(double vy, double vx){
   m_right.Set(ControlMode::PercentOutput, vy - vx);
 }
 
-void TankDrive(double pl, double pr, unsigned double scalar){
+void TankDrive(double pl, double pr, double scalar){
   // Guard  against invalid scalar
   if (scalar <= 0 || scalar > 1){
     pl = 1;
