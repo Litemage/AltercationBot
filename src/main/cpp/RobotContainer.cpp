@@ -4,6 +4,7 @@
 
 #include "RobotContainer.h"
 #include <frc2/command/RunCommand.h>
+#include <cmath>
 
 
 constexpr double thresh = 0.01;
@@ -49,7 +50,7 @@ void RobotContainer::ConfigureButtonBindings() {
 
 double RobotContainer::Deadband(double input, double threshold){
   // TODO implement deadband function
-  if (abs(input) < threshold) {
+  if (fabs(input) < threshold) {
     return 0;
   } else {
     return input;
