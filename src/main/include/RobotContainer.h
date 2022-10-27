@@ -26,6 +26,8 @@ class RobotContainer {
 
  private:
   // The robot's subsystems and commands are defined here...
+  // Controller for robot
+  frc::XboxController m_controller;
   DriveSubsystem m_drive;
   // The arm subsystem
   FaceSmasherSubsystem m_arm;
