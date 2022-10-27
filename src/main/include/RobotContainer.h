@@ -7,6 +7,7 @@
 #include <frc2/command/Command.h>
 
 #include "subsystems/DriveSubsystem.h"
+#include "subsystems/FaceSmasherSubsystem.h"
 
 /**
  * This class is where the bulk of the robot should be declared.  Since
@@ -24,6 +25,8 @@ class RobotContainer {
  private:
   // The robot's subsystems and commands are defined here...
   DriveSubsystem m_drive;
+  // The arm subsystem
+  FaceSmasherSubsystem m_arm;
 
   // Returns zero if input is abs(threshold) away from zero. 
   // Otherwise, returns input Useful for controller deadband

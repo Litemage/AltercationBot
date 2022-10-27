@@ -3,9 +3,10 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "subsystems/DriveSubsystem.h"
+#include "Constants.h"
 #include <iostream>
 
-DriveSubsystem::DriveSubsystem() : m_left{1}, m_right{2} {
+DriveSubsystem::DriveSubsystem() : m_left{MotorAddr::leftMotor}, m_right{MotorAddr::rightMotor} {
   // Implementation of subsystem constructor goes here.
 }
 
