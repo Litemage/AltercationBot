@@ -9,6 +9,8 @@
 #include "subsystems/DriveSubsystem.h"
 #include "subsystems/FaceSmasherSubsystem.h"
 
+#include <frc/XboxController.h>
+
 /**
  * This class is where the bulk of the robot should be declared.  Since
  * Command-based is a "declarative" paradigm, very little robot logic should
@@ -35,4 +37,5 @@ class RobotContainer {
   double Deadband(double input, double threshold);
 
   void ConfigureButtonBindings();
+
 };
