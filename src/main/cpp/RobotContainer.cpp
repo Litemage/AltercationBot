@@ -50,7 +50,7 @@ void RobotContainer::ConfigureButtonBindings() {
 
 double RobotContainer::Deadband(double input, double threshold){
   // TODO implement deadband function
-  if (fabs(input) < threshold) {
+  if (std::abs(input) < threshold) {
     return 0;
   } else {
     return input;
