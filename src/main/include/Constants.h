@@ -19,5 +19,6 @@ namespace MotorAddr
     constexpr int leftMotor = 1;
     constexpr int rightMotor = 2;
     constexpr int armMotor = 3;
+    constexpr int effectorMotor = 4;
 } // namespace MotorAddr
 
