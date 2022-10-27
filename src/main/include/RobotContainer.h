@@ -7,6 +7,7 @@
 #include <frc2/command/Command.h>
 
 #include "subsystems/DriveSubsystem.h"
+#include "subsystems/FaceSmasherSubsystem.h"
 
 #include <frc/XboxController.h>
 
@@ -26,7 +27,8 @@ class RobotContainer {
  private:
   // The robot's subsystems and commands are defined here...
   DriveSubsystem m_drive;
-  frc::XboxController m_controller;
+  // The arm subsystem
+  FaceSmasherSubsystem m_arm;
 
   // Returns zero if input is abs(threshold) away from zero. 
   // Otherwise, returns input Useful for controller deadband

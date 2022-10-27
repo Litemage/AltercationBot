@@ -13,3 +13,11 @@
  * command-specific namespaces within this header, which can then be used where
  * they are needed.
  */
+
+namespace MotorAddr
+{
+    constexpr int leftMotor = 1;
+    constexpr int rightMotor = 2;
+    constexpr int armMotor = 3;
+} // namespace MotorAddr
+
