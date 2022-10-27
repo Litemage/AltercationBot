@@ -8,6 +8,8 @@
 
 #include "subsystems/DriveSubsystem.h"
 
+#include <frc/XboxController.h>
+
 /**
  * This class is where the bulk of the robot should be declared.  Since
  * Command-based is a "declarative" paradigm, very little robot logic should
@@ -24,6 +26,7 @@ class RobotContainer {
  private:
   // The robot's subsystems and commands are defined here...
   DriveSubsystem m_drive;
+  frc::XboxController m_controller;
 
   // Returns zero if input is abs(threshold) away from zero. 
   // Otherwise, returns input Useful for controller deadband
@@ -32,4 +35,5 @@ class RobotContainer {
   double Deadband(double input, double threshold);
 
   void ConfigureButtonBindings();
+
 };
