@@ -8,7 +8,7 @@
 
 
 constexpr double thresh = 0.2;
-constexpr double boostMult = 1.5;
+constexpr double boostMult = 0.5;
 
 
 RobotContainer::RobotContainer() : m_controller{0} {
@@ -29,7 +29,7 @@ RobotContainer::RobotContainer() : m_controller{0} {
         double rightX = Deadband(m_controller.GetRawAxis(static_cast<int>(frc::XboxController::Axis::kRightX)), thresh); //right stick, left/right
         bool leftBumper = m_controller.GetRawButton((static_cast<int>(frc::XboxController::Button::kLeftBumper))); //left bumper, boost
         
-        if (leftBumper) {
+        if (!leftBumper) {
           leftY *= boostMult;
           rightX *= boostMult;
         }
