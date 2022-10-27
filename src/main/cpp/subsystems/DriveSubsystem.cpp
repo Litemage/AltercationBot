@@ -19,11 +19,12 @@ void DriveSubsystem::SimulationPeriodic() {
 }
 
 void DriveSubsystem::ArcadeDrive(double vy, double vx){
-  m_left.Set(ControlMode::PercentOutput, vy + vx);
+  // This motor needs inverted
+  m_left.Set(ControlMode::PercentOutput, -1 * (vy + vx));
   m_right.Set(ControlMode::PercentOutput, vy - vx);
 }
 
-void TankDrive(double pl, double pr, double scalar){
+void DriveSubsystem::TankDrive(double pl, double pr, double scalar){
   // Guard  against invalid scalar
   if (scalar <= 0 || scalar > 1){
     pl = 1;
@@ -34,5 +35,8 @@ void TankDrive(double pl, double pr, double scalar){
   pl *= scalar;
   pr *= scalar;
 
-  // TODO implement tank drive
+  // left motor must be inverted
+  m_left.Set(ControlMode::PercentOutput, -1 * (pl));
+  m_right.Set(ControlMode::PercentOutput, (pl));
+
 }
