@@ -7,7 +7,7 @@
 #include <cmath>
 
 
-constexpr double thresh = 0.01;
+constexpr double thresh = 0.2;
 constexpr double boostMult = 1.5;
 
 
