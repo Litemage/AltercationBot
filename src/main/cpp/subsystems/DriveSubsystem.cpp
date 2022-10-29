@@ -7,20 +7,18 @@
 #include <iostream>
 
 DriveSubsystem::DriveSubsystem() : m_left{MotorAddr::leftMotor}, m_right{MotorAddr::rightMotor} {
-  // Implementation of subsystem constructor goes here.
+  // invert left motor
+  m_left.SetInverted(InvertType::InvertMotorOutput);
 }
 
 void DriveSubsystem::Periodic() {
-  // Implementation of subsystem periodic method goes here.
 }
 
 void DriveSubsystem::SimulationPeriodic() {
-  // Implementation of subsystem simulation periodic method goes here.
 }
 
 void DriveSubsystem::ArcadeDrive(double vy, double vx){
-  // This motor needs inverted
-  m_left.Set(ControlMode::PercentOutput, -1 * (vy + vx));
+  m_left.Set(ControlMode::PercentOutput, (vy + vx));
   m_right.Set(ControlMode::PercentOutput, vy - vx);
 }
 
@@ -35,8 +33,7 @@ void DriveSubsystem::TankDrive(double pl, double pr, double scalar){
   pl *= scalar;
   pr *= scalar;
 
-  // left motor must be inverted
-  m_left.Set(ControlMode::PercentOutput, -1 * (pl));
+  m_left.Set(ControlMode::PercentOutput, (pl));
   m_right.Set(ControlMode::PercentOutput, (pl));
 
 }

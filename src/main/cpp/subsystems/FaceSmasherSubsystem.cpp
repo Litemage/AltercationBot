@@ -9,6 +9,7 @@
 FaceSmasherSubsystem::FaceSmasherSubsystem(double armSpeed, double effectorSpeed) : m_armMotor{MotorAddr::armMotor}, m_effectorMotor{MotorAddr::effectorMotor}, m_armState{false}{
     m_armSpeed = armSpeed;
     m_effectorSpeed = effectorSpeed;
+    //TODO invert motors here if they need to be inverted
 }
 
 // This method will be called once per scheduler run
@@ -23,7 +24,6 @@ void FaceSmasherSubsystem::ArmUp() {
 }
 
 void FaceSmasherSubsystem::ArmDown() {
-    // TODO inverted?
     m_armMotor.Set(ControlMode::PercentOutput, -1 * m_armSpeed);
 }
 
@@ -34,7 +34,6 @@ void FaceSmasherSubsystem::ArmStop(){
 /* ---------------------------- Effector control ---------------------------- */
 
 void FaceSmasherSubsystem::EffectorIn() {
-    // TODO need to be inverted?
     m_effectorMotor.Set(ControlMode::PercentOutput, -1 * m_effectorSpeed);
 }
 
